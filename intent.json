@@ -1,0 +1,128 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "resistor calculator",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetResistorValue",
+                    "slots": [
+                        {
+                            "name": "firstband",
+                            "type": "AMAZON.Color"
+                        },
+                        {
+                            "name": "secondband",
+                            "type": "AMAZON.Color"
+                        },
+                        {
+                            "name": "multiplier",
+                            "type": "AMAZON.Color"
+                        },
+                        {
+                            "name": "tolerance",
+                            "type": "AMAZON.Color"
+                        }
+                    ],
+                    "samples": [
+                        "calculate {firstband} {secondband} {multiplier} {tolerance}",
+                        "calculate the resistance of {firstband} {secondband} {multiplier} {tolerance}",
+                        "tell me the resistance of {firstband} {secondband} {multiplier} {tolerance}",
+                        "give me resistance of {firstband} {secondband} {multiplier} {tolerance}",
+                        "{firstband} {secondband} {multiplier} {tolerance}",
+                        "resistor {firstband} {secondband} {multiplier} {tolerance}",
+                        "resistance of {firstband} {secondband} {multiplier} {tolerance}",
+                        "value of {firstband} {secondband} {multiplier} {tolerance}",
+                        "what is the resistance of {firstband} {secondband} {multiplier} {tolerance}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "AMAZON.Color",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "silver"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gold"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "white"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gray"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yellow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "orange"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "black"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "violet"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blue"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "red"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "brown"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
