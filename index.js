@@ -1,18 +1,18 @@
-/* 
+/*
  * Project: Resistor Calculator
  * Authors: Matthew Ngor, Patrick Phuong, Ryan Tran
  * Date Created: 1/19/19
  * Description: Returns the resistance and tolerance of a 4-band resistor
- * 
+ *
  * How to use: This program is intended to be used with the attached .json file.
  * 1. Say: "Alexa, open resistor calculator"
  * 2. Give Alexa 4 valid colors for a 4 band resistor.
- * 
- * "exports.handler" boilerplate code obtained from BlondieBytes and Amazon Github repositories 
+ *
+ * "exports.handler" boilerplate code obtained from BlondieBytes and Amazon Github repositories
  * for educational purposes.
 */
 
-// initialization of string variables for Map  
+// initialization of string variables for Map
 var black = "black",
     brown = "brown",
     red = "red",
@@ -62,8 +62,8 @@ tolerance.set(green, 0.5);
 tolerance.set(blue, 0.25);
 tolerance.set(violet, 0.10);
 tolerance.set(grey, 0.05);
-tolerance.set(gold, 0.5);
-tolerance.set(silver, 0.10);
+tolerance.set(gold, 5);
+tolerance.set(silver, 10);
 
 // Route the incoming request based on type (LaunchRequest, IntentRequest,
 // etc.) The JSON body of the request is provided in the event parameter.
@@ -114,7 +114,7 @@ function onIntent(intentRequest, session, callback) {
     var intentName = intentRequest.intent.name;
 
     // dispatch custom intents to handlers here
-    if (intentName == "GetResistorValue") { 
+    if (intentName == "GetResistorValue") {
         handleResistorResponse(intent, session, callback);
     } else if (intentName == "AMAZON.CancelIntent") {
         handleFinishSessionRequest(intent, session, callback);
@@ -153,15 +153,15 @@ function handleResistorResponse(intent, session, callback) {
     var band1 = intent.slots.firstband.value;
     var band2 = intent.slots.secondband.value;
     var multiplier_val = intent.slots.multiplier.value;
-    var tolerance_val = intent.slots.tolerance.value;  
-    
+    var tolerance_val = intent.slots.tolerance.value;
+
     if (band.has(band1) && band.has(band2) && multiplier.has(multiplier_val) && tolerance.has(tolerance_val)){
       var band1val = band.get(band1);
       var band2val = band.get(band2);
       var multiplierVal = multiplier.get(multiplier_val);
       var toleranceVal = tolerance.get(tolerance_val);
 
-      // calculation of bands 
+      // calculation of bands
       var resistance = ((band1val*10) + band2val)*multiplierVal;
       var speechOutput = "The resistance is " + resistance + " ohms with " + toleranceVal + "% tolerance.";
       var repromptText = "What are the 4 resistor bands?";
